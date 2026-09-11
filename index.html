@@ -159,9 +159,9 @@
   /* results */
   .results{background:#050506;text-align:center}
   .results .words{display:flex;flex-wrap:wrap;justify-content:center}
-  .results .word{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(2.2rem,7vw,5rem);line-height:1.05;padding:0 .35em;color:rgba(255,255,255,.12);transition:color .4s ease;cursor:default;letter-spacing:-.01em}
-  .results .word:nth-child(odd):hover{color:var(--pink)}
-  .results .word:nth-child(even):hover{color:var(--cyan)}
+  .results .word{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(2.2rem,7vw,5rem);line-height:1.05;padding:0 .35em;color:rgba(255,255,255,.12);transition:color .5s ease,text-shadow .5s ease;cursor:default;letter-spacing:-.01em}
+  .results .word:nth-child(odd).active,.results .word:nth-child(odd):hover{color:var(--pink);text-shadow:0 0 34px rgba(240,50,125,.45)}
+  .results .word:nth-child(even).active,.results .word:nth-child(even):hover{color:var(--cyan);text-shadow:0 0 34px rgba(46,168,230,.45)}
   .results .lead{max-width:60ch;margin:0 auto 40px;font-size:1.15rem;color:var(--muted)}
 
   /* community collage */
@@ -544,6 +544,19 @@
   // hide poster once video can play
   const v=document.querySelector('.hero video'),p=document.getElementById('heroPoster');
   if(v){v.addEventListener('playing',()=>{p.style.opacity='0';p.style.transition='opacity .6s ease';});}
+
+  // auto-cycle the results words (skips if user prefers reduced motion)
+  (function(){
+    const words=[...document.querySelectorAll('.results .word')];
+    if(!words.length||matchMedia('(prefers-reduced-motion:reduce)').matches){words.forEach(w=>w.classList.add('active'));return;}
+    let i=0,timer=null;
+    const step=()=>{words.forEach(w=>w.classList.remove('active'));words[i].classList.add('active');i=(i+1)%words.length;};
+    const start=()=>{if(!timer){step();timer=setInterval(step,1400);}};
+    const stop=()=>{clearInterval(timer);timer=null;};
+    // only run while the section is on screen
+    new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:0.25})
+      .observe(document.querySelector('.results'));
+  })();
 
   document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
