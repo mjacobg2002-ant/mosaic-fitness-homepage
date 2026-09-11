@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mosaic Fitness Center | Functional Fitness &amp; Coaching in Fairfax, VA</title>
+<meta name="description" content="Coach-led functional fitness in Fairfax, Virginia. Purposeful training, recovery, bootcamp, and kids & teens programs built around a community that helps you move better and stay consistent." />
+<meta name="theme-color" content="#0d1b2a" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mosaic Fitness Center | Functional Fitness in Fairfax, VA" />
+<meta property="og:description" content="Coach-led functional fitness, recovery, and community in Fairfax, Virginia. Train with purpose." />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Mosaic Fitness Center" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- LocalBusiness structured data. Only verified facts from mosaicfitnesscenter.com are included. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Mosaic Fitness Center",
+  "description": "Coach-led functional fitness, recovery and injury prevention, entry-level bootcamp, and kids & teens programs in Fairfax, Virginia.",
+  "url": "https://mosaicfitnesscenter.com/",
+  "telephone": "+1-703-278-2746",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2929 Eskridge Road",
+    "addressLocality": "Fairfax",
+    "addressRegion": "VA",
+    "addressCountry": "US"
+  },
+  "areaServed": "Northern Virginia",
+  "sport": "Functional Fitness"
+}
+</script>
+
+<style>
+  :root{
+    --ink:#0d1b2a;          /* deep navy */
+    --ink-2:#12263a;
+    --charcoal:#161a1d;
+    --paper:#f6f4ef;        /* warm off-white */
+    --paper-2:#ece8e0;
+    --accent:#e8613a;       /* energetic clay/orange */
+    --accent-dark:#c94a26;
+    --muted:#5b6672;
+    --line:rgba(13,27,42,.12);
+    --white:#ffffff;
+    --shadow:0 24px 60px -24px rgba(13,27,42,.35);
+    --radius:18px;
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .display{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;line-height:.98;letter-spacing:-.01em}
+  .eyebrow{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;color:var(--accent)}
+  .eyebrow.light{color:#ffb59e}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+    font-size:.95rem;padding:16px 28px;border-radius:100px;border:2px solid transparent;
+    cursor:pointer;transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(232,97,58,.7)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-ghost.on-dark{color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-ghost.on-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .btn .arrow{transition:transform .25s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ---------- Nav ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s ease,box-shadow .3s ease,padding .3s ease}
+  header .bar{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:var(--maxw);margin:0 auto;transition:padding .3s ease}
+  header.scrolled{background:rgba(246,244,239,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  header.scrolled .bar{padding:12px 24px}
+  .logo{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:1.25rem;color:#fff;transition:color .3s ease;display:flex;align-items:center;gap:10px}
+  .logo .dot{width:12px;height:12px;background:var(--accent);border-radius:3px;transform:rotate(45deg)}
+  header.scrolled .logo{color:var(--ink)}
+  nav.desktop{display:flex;align-items:center;gap:34px}
+  nav.desktop a{font-weight:500;font-size:.95rem;color:rgba(255,255,255,.9);transition:color .2s ease}
+  header.scrolled nav.desktop a{color:var(--ink)}
+  nav.desktop a:hover{color:var(--accent)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-right{display:flex;align-items:center;gap:28px}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .hamburger span{width:26px;height:2px;background:#fff;transition:.3s;border-radius:2px}
+  header.scrolled .hamburger span{background:var(--ink)}
+
+  /* mobile menu */
+  .mobile-menu{position:fixed;inset:0;background:var(--ink);z-index:200;transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;padding:28px 24px}
+  .mobile-menu.open{transform:translateX(0)}
+  .mobile-menu .mm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+  .mobile-menu a.mm-link{color:#fff;font-family:'Oswald',sans-serif;font-size:2rem;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .mobile-menu .close{background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1}
+  .mobile-menu .mm-cta{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;z-index:0}
+  /* PLACEHOLDER: replace with a real wide Mosaic Fitness Center training-floor photo */
+  .hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);animation:heroZoom 12s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.55) 0%,rgba(13,27,42,.25) 35%,rgba(13,27,42,.85) 100%)}
+  .hero .inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;width:100%;padding:0 24px 72px}
+  .hero .loc{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:.78rem;color:#ffb59e;margin-bottom:22px}
+  .hero .loc::before{content:"";width:26px;height:2px;background:var(--accent)}
+  .hero h1{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;font-size:clamp(2.7rem,8vw,6.2rem);max-width:15ch}
+  .hero h1 .accent{color:var(--accent)}
+  .hero p.sub{max-width:52ch;font-size:clamp(1.05rem,2vw,1.3rem);color:rgba(255,255,255,.9);margin:24px 0 34px}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .scroll-hint{position:absolute;bottom:26px;right:32px;z-index:2;font-family:'Oswald',sans-serif;letter-spacing:.2em;font-size:.7rem;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:10px}
+  .scroll-hint .line{width:1px;height:44px;background:rgba(255,255,255,.5);position:relative;overflow:hidden}
+  .scroll-hint .line::after{content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--accent);animation:scrolldown 1.8s ease-in-out infinite}
+  @keyframes scrolldown{to{top:100%}}
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--ink);color:#fff;padding:0}
+  .trust .grid{display:grid;grid-template-columns:repeat(5,1fr)}
+  .trust .item{padding:30px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+  .trust .item:last-child{border-right:none}
+  .trust .item .k{font-family:'Oswald',sans-serif;font-size:1.9rem;font-weight:700;color:var(--accent);line-height:1}
+  .trust .item .l{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:8px;font-family:'Oswald',sans-serif;font-weight:500}
+
+  /* ---------- Sections ---------- */
+  section{position:relative}
+  .pad{padding:clamp(70px,11vw,140px) 0}
+  .section-head{max-width:760px;margin-bottom:56px}
+  .section-head h2{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:-.01em;font-size:clamp(2rem,5vw,3.6rem);margin:14px 0 18px}
+  .section-head p{font-size:1.12rem;color:var(--muted)}
+
+  /* Why cards */
+  .why-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .why-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:transform .3s ease,box-shadow .3s ease}
+  .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .why-card .num{font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:700;color:var(--accent);letter-spacing:.15em}
+  .why-card h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:1.35rem;margin:16px 0 10px;letter-spacing:.01em}
+  .why-card p{color:var(--muted);font-size:.98rem}
+
+  /* Programs */
+  .programs{background:var(--ink);color:#fff}
+  .programs .section-head p{color:rgba(255,255,255,.72)}
+  .prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .prog{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;display:flex;align-items:flex-end;color:#fff}
+  .prog img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .prog::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.05) 30%,rgba(13,27,42,.9) 100%)}
+  .prog:hover img{transform:scale(1.06)}
+  .prog .p-body{position:relative;z-index:2;padding:34px}
+  .prog h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:1.7rem;letter-spacing:.01em}
+  .prog p{color:rgba(255,255,255,.85);margin:10px 0 16px;max-width:42ch}
+  .prog .learn{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:#ffb59e}
+  .prog .learn .arrow{transition:transform .25s ease}
+  .prog:hover .learn .arrow{transform:translateX(5px)}
+
+  /* Coaching split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .split .media{position:relative;min-height:520px}
+  .split .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .split .text{padding:clamp(40px,7vw,90px);display:flex;flex-direction:column;justify-content:center}
+  .split .text h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;letter-spacing:-.01em;margin:16px 0 20px}
+  .split .text p{color:var(--muted);font-size:1.1rem;margin-bottom:26px;max-width:46ch}
+
+  /* Results band */
+  .results{background:var(--charcoal);color:#fff;text-align:center}
+  .results .words{display:flex;flex-wrap:wrap;justify-content:center;gap:0}
+  .results .word{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(2.2rem,7vw,5rem);line-height:1;padding:0 .35em;color:rgba(255,255,255,.14);transition:color .4s ease;cursor:default;letter-spacing:-.01em}
+  .results .word:hover{color:var(--accent)}
+  .results .lead{max-width:60ch;margin:0 auto 44px;font-size:1.15rem;color:rgba(255,255,255,.8)}
+
+  /* Community collage */
+  .collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+  .collage figure{overflow:hidden;border-radius:14px;position:relative}
+  .collage img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .collage figure:hover img{transform:scale(1.07)}
+  .collage .tall{grid-row:span 2}
+  .collage .wide{grid-column:span 2}
+
+  /* Kids band */
+  .kids{background:var(--accent);color:#fff;overflow:hidden}
+  .kids .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .kids h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:clamp(2rem,5vw,3.6rem);line-height:1;letter-spacing:-.01em;margin-bottom:20px}
+  .kids p{font-size:1.15rem;color:rgba(255,255,255,.92);max-width:46ch;margin-bottom:28px}
+  .kids .btn-primary{background:#fff;color:var(--accent)}
+  .kids .btn-primary:hover{background:var(--ink);color:#fff;box-shadow:none}
+  .kids .media{border-radius:var(--radius);overflow:hidden;min-height:420px;position:relative;box-shadow:var(--shadow)}
+  .kids .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* Location */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .loc-info h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;margin:14px 0 24px}
+  .loc-info .row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+  .loc-info .row .ic{color:var(--accent);flex:none;margin-top:2px}
+  .loc-info .row .lbl{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;color:var(--muted)}
+  .loc-info .row .val{font-size:1.1rem;font-weight:600}
+  .map-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:360px}
+  .map-card iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+
+  /* Final CTA */
+  .final{position:relative;color:#fff;text-align:center;overflow:hidden}
+  .final .bg{position:absolute;inset:0;z-index:0}
+  .final .bg img{width:100%;height:100%;object-fit:cover}
+  .final .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.82),rgba(13,27,42,.92))}
+  .final .inner{position:relative;z-index:2}
+  .final h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:clamp(2.3rem,6vw,4.8rem);line-height:.98;letter-spacing:-.01em;margin-bottom:20px}
+  .final p{max-width:56ch;margin:0 auto 34px;font-size:1.2rem;color:rgba(255,255,255,.88)}
+  .final .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(255,255,255,.72);padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  footer .logo{color:#fff;margin-bottom:16px}
+  footer p{max-width:40ch;font-size:.95rem}
+  footer h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:#fff;margin-bottom:16px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:10px}
+  footer ul li a{font-size:.95rem;transition:color .2s ease}
+  footer ul li a:hover{color:var(--accent)}
+  .socials{display:flex;gap:12px;margin-top:6px}
+  .socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;transition:.25s}
+  .socials a:hover{background:var(--accent);border-color:var(--accent)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem}
+
+  /* Sticky mobile CTA */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;padding:12px 16px;background:rgba(13,27,42,.96);backdrop-filter:blur(8px);gap:10px}
+  .sticky-cta .btn{flex:1;justify-content:center;padding:14px}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .hero .bg img{animation:none;transform:none}
+    *{scroll-behavior:auto}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:960px){
+    nav.desktop,.nav-cta .btn{display:none}
+    .hamburger{display:flex}
+    .why-cards{grid-template-columns:repeat(2,1fr)}
+    .prog-grid{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+    .split .media{min-height:340px}
+    .kids .inner{grid-template-columns:1fr;gap:34px}
+    .loc-grid{grid-template-columns:1fr}
+    .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+    .trust .grid{grid-template-columns:repeat(2,1fr)}
+    .trust .item:nth-child(2){border-right:none}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .why-cards{grid-template-columns:1fr}
+    .trust .grid{grid-template-columns:1fr}
+    .trust .item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+    .sticky-cta{display:flex}
+    body{padding-bottom:72px}
+    .hero .inner{padding-bottom:96px}
+    .scroll-hint{display:none}
+    .collage .tall{grid-row:span 1}
+    .collage .wide{grid-column:span 2}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="header">
+  <div class="bar">
+    <a href="#top" class="logo"><span class="dot"></span>Mosaic Fitness</a>
+    <div class="nav-right">
+      <nav class="desktop">
+        <a href="#programs">Programs</a>
+        <a href="#coaching">About</a>
+        <a href="#coaching">Coaches</a>
+        <a href="#kids">Kids &amp; Teens</a>
+        <a href="#location">Location</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#start" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-top">
+    <span class="logo" style="color:#fff"><span class="dot"></span>Mosaic Fitness</span>
+    <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
+  </div>
+  <a class="mm-link" href="#programs">Programs</a>
+  <a class="mm-link" href="#coaching">About</a>
+  <a class="mm-link" href="#coaching">Coaches</a>
+  <a class="mm-link" href="#kids">Kids &amp; Teens</a>
+  <a class="mm-link" href="#location">Location</a>
+  <div class="mm-cta">
+    <a href="#start" class="btn btn-primary" style="justify-content:center">Start Your Fitness Journey</a>
+    <a href="tel:+17032782746" class="btn btn-ghost on-dark" style="justify-content:center">Call (703) 278-2746</a>
+  </div>
+</div>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="bg">
+    <!-- PLACEHOLDER: replace with a real wide Mosaic Fitness Center training-floor photo (group functional training / barbell work). -->
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80" alt="Athletes training together on the functional fitness floor" />
+  </div>
+  <div class="inner reveal">
+    <span class="loc">Fairfax, Virginia</span>
+    <h1>Train With Purpose.<br /><span class="accent">Live Stronger.</span></h1>
+    <p class="sub">Expert coaching, purposeful training, and a community built to help you move better, get stronger, and stay consistent.</p>
+    <div class="cta-row">
+      <a href="#start" class="btn btn-primary">Start Your Fitness Journey <span class="arrow">&rarr;</span></a>
+      <a href="#programs" class="btn btn-ghost on-dark">Explore Programs</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="grid">
+    <div class="item"><div class="k">10+</div><div class="l">Years Serving the DMV</div></div>
+    <div class="item"><div class="k">5AM</div><div class="l">Classes, Mon–Fri</div></div>
+    <div class="item"><div class="k">Coach</div><div class="l">Led Instruction</div></div>
+    <div class="item"><div class="k">All</div><div class="l">Levels Welcome</div></div>
+    <div class="item"><div class="k">Kids+Teens</div><div class="l">Youth Programs</div></div>
+  </div>
+</div>
+
+<!-- ============ WHY MOSAIC ============ -->
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Mosaic</span>
+      <h2>Fitness Should Be More Than Showing Up.</h2>
+      <p>At Mosaic, you're not left to figure it out alone. Our approach combines purposeful training, expert instruction, recovery, and community to help you build sustainable progress.</p>
+    </div>
+    <div class="why-cards">
+      <div class="why-card reveal"><div class="num">01</div><h3>Coaching</h3><p>Learn how to move, train, and progress with intention — with a coach paying attention to every rep.</p></div>
+      <div class="why-card reveal"><div class="num">02</div><h3>Community</h3><p>Train alongside people who encourage you to keep showing up, even on the hard days.</p></div>
+      <div class="why-card reveal"><div class="num">03</div><h3>Progress</h3><p>Build strength, confidence, and better movement through consistent, structured training.</p></div>
+      <div class="why-card reveal"><div class="num">04</div><h3>Recovery</h3><p>Train hard while giving your body the tools it needs to recover, prevent injury, and perform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="pad programs" id="programs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow light">Find Your Training</span>
+      <h2>Programs Built Around Real Movement.</h2>
+      <p>From your first class to advanced strength cycles, there's a place for you at Mosaic.</p>
+    </div>
+    <div class="prog-grid">
+      <article class="prog reveal">
+        <!-- PLACEHOLDER: real Mosaic photo — barbell / olympic lifting during a functional class -->
+        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=1200&q=80" alt="Athlete performing a barbell clean during a functional fitness class" />
+        <div class="p-body">
+          <h3>Functional Fitness</h3>
+          <p>Purposeful strength and conditioning built around real movement — cleans, snatches, rowing, box jumps and more, programmed in 8–16 week cycles.</p>
+          <span class="learn">Learn More <span class="arrow">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="prog reveal">
+        <!-- PLACEHOLDER: real Mosaic photo — mobility / corrective / recovery session -->
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Member working through a guided mobility and recovery session" />
+        <div class="p-body">
+          <h3>Recovery &amp; Injury Prevention</h3>
+          <p>Dedicated corrective exercise and recovery sessions designed around better physical function — available weekdays and weekends.</p>
+          <span class="learn">Learn More <span class="arrow">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="prog reveal">
+        <!-- PLACEHOLDER: real Mosaic photo — welcoming beginner bootcamp group -->
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80" alt="Beginners training together in an entry-level bootcamp class" />
+        <div class="p-body">
+          <h3>Entry-Level Bootcamp</h3>
+          <p>A welcoming starting point for beginners or anyone returning to fitness — structure, coaching, and accountability, daily Monday–Friday.</p>
+          <span class="learn">Learn More <span class="arrow">&rarr;</span></span>
+        </div>
+      </article>
+      <article class="prog reveal">
+        <!-- PLACEHOLDER: real Mosaic photo — kids/teens training session -->
+        <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1200&q=80" alt="Young athletes building movement skills in a kids and teens class" />
+        <div class="p-body">
+          <h3>Kids &amp; Teens</h3>
+          <p>Age-appropriate fitness split by group — kids focus on movement awareness, teens on weightlifting and building real strength.</p>
+          <span class="learn">Learn More <span class="arrow">&rarr;</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COACHING DIFFERENTIATOR ============ -->
+<section class="split" id="coaching">
+  <div class="media reveal">
+    <!-- PLACEHOLDER: real Mosaic photo — coach correcting a member's movement one-on-one -->
+    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1200&q=80" alt="A Mosaic coach guiding a member through proper lifting technique" />
+  </div>
+  <div class="text reveal">
+    <span class="eyebrow">Coach-Led Training</span>
+    <h2>You're Not Just Another Membership.</h2>
+    <p>Great training isn't just about having access to equipment. It's about having the right instruction, the right environment, and people who actually want to see you improve.</p>
+    <p style="color:var(--ink);font-weight:600;font-size:1.15rem;margin-bottom:30px">"Dedication. Commitment. Consistency." — the standard we coach to, every single class.</p>
+    <div><a href="#start" class="btn btn-primary">Talk to a Coach <span class="arrow">&rarr;</span></a></div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section class="pad results">
+  <div class="wrap">
+    <span class="eyebrow light reveal" style="display:block;margin-bottom:22px">What You're Working Toward</span>
+    <div class="words reveal">
+      <span class="word">Move Better</span>
+      <span class="word">Get Stronger</span>
+      <span class="word">Build Confidence</span>
+      <span class="word">Stay Consistent</span>
+    </div>
+    <p class="lead reveal" style="margin-top:44px">This isn't about looking good for a few weeks. It's about becoming stronger and more capable over time — with a program and a community that keep you going.</p>
+    <a href="#start" class="btn btn-primary reveal">Start Your Fitness Journey <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="pad" id="community">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Community</span>
+      <h2>Find Your People.</h2>
+      <p>Consistency is easier when you train around people who know your name, challenge you, and want to see you succeed.</p>
+    </div>
+    <div class="collage">
+      <!-- PLACEHOLDERS: replace each with real Mosaic community / training photos -->
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80" alt="Members encouraging each other during a group workout" /></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1200&q=80" alt="Group class training together on the floor" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80" alt="Athlete mid-lift with focus" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1596357395217-80de13130e92?auto=format&fit=crop&w=800&q=80" alt="Coach and member sharing a moment after class" /></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" alt="Members rowing side by side" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=800&q=80" alt="Strength training with kettlebells" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KIDS & TEENS ============ -->
+<section class="pad kids" id="kids">
+  <div class="wrap inner">
+    <div class="reveal">
+      <span class="eyebrow" style="color:rgba(255,255,255,.85)">Kids &amp; Teens</span>
+      <h2>Build Strong Habits Early.</h2>
+      <p>Help the next generation develop confidence, movement skills, and a positive relationship with fitness — with classes split by age group.</p>
+      <a href="#start" class="btn btn-primary">Explore Kids &amp; Teens <span class="arrow">&rarr;</span></a>
+    </div>
+    <div class="media reveal">
+      <!-- PLACEHOLDER: real Mosaic youth-program photo -->
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80" alt="Young athletes learning movement fundamentals" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="pad" id="location">
+  <div class="wrap loc-grid">
+    <div class="loc-info reveal">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Train in the Heart of Fairfax.</h2>
+      <div class="row">
+        <span class="ic">&#9679;</span>
+        <div><div class="lbl">Address</div><div class="val">2929 Eskridge Road, Fairfax, VA</div></div>
+      </div>
+      <div class="row">
+        <span class="ic">&#9679;</span>
+        <div><div class="lbl">Phone</div><div class="val"><a href="tel:+17032782746">(703) 278-2746</a></div></div>
+      </div>
+      <div class="row">
+        <span class="ic">&#9679;</span>
+        <div><div class="lbl">Hours</div><div class="val">Open today 5:00 AM – 7:00 PM</div><div class="lbl" style="margin-top:4px">Contact for holiday schedules</div></div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=2929+Eskridge+Road+Fairfax+VA" target="_blank" rel="noopener" class="btn btn-primary">Get Directions <span class="arrow">&rarr;</span></a>
+        <a href="tel:+17032782746" class="btn btn-ghost">Call Now</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Map to Mosaic Fitness Center" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=2929+Eskridge+Road+Fairfax+VA&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="pad final" id="start">
+  <div class="bg">
+    <!-- PLACEHOLDER: real Mosaic photo — powerful wide training-floor shot -->
+    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=2000&q=80" alt="Members training hard on the Mosaic floor" />
+  </div>
+  <div class="wrap inner reveal">
+    <h2>Ready to Start Training<br />With Purpose?</h2>
+    <p>Whether you're new to fitness or looking for a better place to train, Mosaic is here to help you take the next step.</p>
+    <div class="cta-row">
+      <a href="tel:+17032782746" class="btn btn-primary">Start Your Fitness Journey <span class="arrow">&rarr;</span></a>
+      <a href="tel:+17032782746" class="btn btn-ghost on-dark">Call (703) 278-2746</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><span class="dot"></span>Mosaic Fitness</div>
+        <p>Functional fitness, recovery, and coaching in Fairfax, Virginia. We help you help yourself — getting you moving and enhancing your fitness through effective, purposeful exercise.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/mfc_2929/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.yelp.com/" target="_blank" rel="noopener" aria-label="Yelp">Yelp</a>
+          <a href="https://www.youtube.com/@mosafit" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Functional Fitness</a></li>
+          <li><a href="#programs">Recovery &amp; Injury Prevention</a></li>
+          <li><a href="#programs">Entry-Level Bootcamp</a></li>
+          <li><a href="#kids">Kids &amp; Teens</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#location">2929 Eskridge Road</a></li>
+          <li><a href="#location">Fairfax, VA</a></li>
+          <li><a href="tel:+17032782746">(703) 278-2746</a></li>
+          <li><a href="#start">Get Started</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr"></span> Mosaic Fitness Center. Strive to Be Different.</span>
+      <span>Fairfax &middot; Northern Virginia &middot; DMV</span>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="#start" class="btn btn-primary">Get Started</a>
+  <a href="tel:+17032782746" class="btn btn-ghost on-dark">Call</a>
+</div>
+
+<script>
+  // sticky nav
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // mobile menu
+  const mm=document.getElementById('mobileMenu');
+  const openBtn=document.getElementById('hamburger');
+  const closeBtn=document.getElementById('closeMenu');
+  const setMenu=(o)=>{mm.classList.toggle('open',o);mm.setAttribute('aria-hidden',!o);openBtn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+  openBtn.addEventListener('click',()=>setMenu(true));
+  closeBtn.addEventListener('click',()=>setMenu(false));
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+  // reveal on scroll
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
